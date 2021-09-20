@@ -7,6 +7,7 @@ GIT_CREDS=${HOME}/.git-credentials
 rm -rf .git
 
 # install dependencies
+printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
 apt update -qqy
 apt remove -qqy docker docker-engine docker.io containerd runc
 apt install -qqy apt-transport-https ca-certificates curl gnupg lsb-release git screen
