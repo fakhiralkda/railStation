@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ENV DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 
 [[ -z "${GH_PAT}" ]] && echo "No gh token!" && exit 1
 GIT_CREDS=${HOME}/.git-credentials
@@ -9,8 +9,8 @@ GIT_CREDS=${HOME}/.git-credentials
 rm -rf .git
 
 # install dependencies
-apt update -qqy
-apt install -qqy curl git screen
+#apt update -qqy
+#apt install -qqy apt-utils curl git screen
 
 # git configuration
 git config --global credential.helper store

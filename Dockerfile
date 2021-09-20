@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM rzlamrr/rail:latest
 
 COPY start.sh .
 
