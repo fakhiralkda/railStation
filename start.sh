@@ -8,22 +8,15 @@ GIT_CREDS=${HOME}/.git-credentials
 # clean workdir
 rm -rf .git
 
-# install dependencies
-#apt update -qqy
-#apt install -qqy apt-utils curl git screen
-
 # git configuration
 git config --global credential.helper store
 git config --global user.name rzlamrr
 git config --global user.email rzlamrr.dvst@protonmail.com
 
-echo "https://rzlamrr:${GH_PAT}@github.com" > ${GIT_CREDS}
-chmod 600 ${GIT_CREDS}
-
 # clone repos
-git clone https://github.com/rzlamrr/aria -b gh --quiet
-git clone https://github.com/fakhiralkda/redditGram --quiet rgram
-git clone https://github.com/fakhiralkda/hyconbot --quiet
+git clone https://rzlamrr:${GH_PAT}@github.com/rzlamrr/aria -b gh
+git clone https://github.com/fakhiralkda/redditGram rgram
+git clone https://github.com/fakhiralkda/hyconbot
 
 # run it
 screen -dmS A bash -c "cd aria; bash build.sh"
