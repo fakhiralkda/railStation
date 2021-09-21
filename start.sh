@@ -14,7 +14,7 @@ git config --global user.name rzlamrr
 git config --global user.email rzlamrr.dvst@protonmail.com
 
 # clone repos
-git clone https://rzlamrr:${GH_PAT}@github.com/rzlamrr/aria -b gh
+git clone https://rzlamrr:${GH_PAT}@github.com/rzlamrr/usergex
 git clone https://github.com/fakhiralkda/redditGram rgram
 git clone https://github.com/fakhiralkda/hyconbot
 
@@ -24,6 +24,13 @@ rm -f ${GIT_CREDS}
 screen -dmS B bash -c "cd rgram; pip3 install -r requirements.txt; bash loop.sh"
 screen -dmS C bash -c "cd hyconbot; pip3 install -r requirements.txt; python3 -m hycon"
 
-cd aria
-docker build . -t m
-docker run -p 80:80 m
+cd usergex
+bash run
+
+# keep it alive
+while true
+do
+    echo "####################"
+    screen -ls
+    sleep 900
+done
