@@ -25,6 +25,5 @@ screen -dmS B bash -c "cd rgram; pip3 install -r requirements.txt; bash loop.sh"
 screen -dmS C bash -c "cd hyconbot; pip3 install -r requirements.txt; python3 -m hycon"
 
 cd aria
-dockerd
 docker build . -t m
 docker run -p 80:80 m
