@@ -19,8 +19,16 @@ git clone https://github.com/fakhiralkda/redditGram rgram
 git clone https://github.com/fakhiralkda/hyconbot
 
 # run it
-screen -dmS A bash -c "cd aria; bash build.sh"
+screen -dmS A bash -c "cd aria; docker build . -t m; docker run -p 80:80 m"
 screen -dmS B bash -c "cd rgram; pip3 install -r requirements.txt; bash loop.sh"
 screen -dmS C bash -c "cd hyconbot; pip3 install -r requirements.txt; python3 -m hycon"
 
 rm -f ${GIT_CREDS}
+
+# keep it alive
+while true
+do
+    echo "####################"
+    screen -ls
+    sleep 900
+done
