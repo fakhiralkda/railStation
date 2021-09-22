@@ -21,8 +21,11 @@ rm -f ${HOME}/.git-credentials
 screen -dmS B bash -c "cd rgram; pip3 install -r requirements.txt; bash loop.sh"
 screen -dmS C bash -c "cd hyconbot; pip3 install -r requirements.txt; python3 -m hycon"
 
+wget -q -O requirements.txt https://raw.githubusercontent.com/UsergeTeam/Userge/alpha/requirements.txt
+pip install -q -r requirements.txt
+wget -q -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
+
 cd usergex
-wget -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
 bash run
 
 # keep it alive
