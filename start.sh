@@ -1,9 +1,6 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND=noninteractive
-
 [[ -z "${GH_PAT}" ]] && echo "No gh token!" && exit 1
-GIT_CREDS=${HOME}/.git-credentials
 
 # clean workdir
 rm -rf .git
@@ -18,13 +15,14 @@ git clone https://rzlamrr:${GH_PAT}@github.com/rzlamrr/usergex
 git clone https://github.com/fakhiralkda/redditGram rgram
 git clone https://github.com/fakhiralkda/hyconbot
 
-rm -f ${GIT_CREDS}
+rm -f ${HOME}/.git-credentials
 
 # run it
 screen -dmS B bash -c "cd rgram; pip3 install -r requirements.txt; bash loop.sh"
 screen -dmS C bash -c "cd hyconbot; pip3 install -r requirements.txt; python3 -m hycon"
 
 cd usergex
+wget -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
 bash run
 
 # keep it alive
