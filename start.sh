@@ -22,7 +22,14 @@ rm -f ${HOME}/.git-credentials
 screen -dmS A bash -c "cd usergex; bash run"
 screen -dmS B bash -c "cd rgram; pip3 install --no-cache-dir -r requirements.txt; bash loop.sh"
 screen -dmS C bash -c "cd hyconbot; pip3 install --no-cache-dir -r requirements.txt; python3 -m hycon"
-screen -dmS D bash -c "cd aria; bash build.sh"
+#screen -dmS D bash -c "cd aria; bash build.sh"
+
+cd aria
+bash build.sh
+
+# clean apt package
+apt autoclean -qqy
+apt autoremove -qqy
 
 # keep it alive
 while true
