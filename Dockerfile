@@ -19,7 +19,7 @@ RUN mkdir -p /tmpk/ && \
     wget -q -O chromedriver.zip http://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip  && \
     unzip chromedriver.zip chromedriver -d /usr/bin/ && \
     # install rar
-    wget -q -O rarlinux.tar.gz http://www.rarlab.com/rar/rarlinux-x64-6.0.0.tar.gz && \
+    wget --no-check-certificate -q -O rarlinux.tar.gz http://www.rarlab.com/rar/rarlinux-x64-6.0.0.tar.gz && \
     tar -xzvf rarlinux.tar.gz && \
     cd rar && \
     cp -v rar unrar /usr/bin/ && \
