@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive GOOGLE_CHROME_DRIVER=/usr/bin/chromedriver GO
 
 RUN apt -qqy update && \
     apt -qqy install --no-install-recommends \
-    curl git gnupg2 unzip wget ffmpeg jq screen libmagic-dev && \
+    aria2 curl git gnupg2 unzip wget ffmpeg jq screen libmagic-dev && \
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i ./google-chrome-stable_current_amd64.deb; apt -fqqy install && \
     rm ./google-chrome-stable_current_amd64.deb && \
