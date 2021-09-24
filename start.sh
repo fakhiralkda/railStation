@@ -18,10 +18,12 @@ git clone https://github.com/fakhiralkda/hyconbot
 
 rm -f ${HOME}/.git-credentials
 
+pip3 install virtualenv
+
 # run it
-screen -dmS A bash -c "cd usergex; bash run"
-screen -dmS B bash -c "cd rgram; pip3 install --no-cache-dir -r requirements.txt; bash loop.sh"
-screen -dmS C bash -c "cd hyconbot; pip3 install --no-cache-dir -r requirements.txt; python3 -m hycon"
+screen -dmS A bash -c "cd usergex; bash rail.sh"
+screen -dmS B bash -c "cd rgram; bash rail.sh"
+screen -dmS C bash -c "cd hyconbot; bash rail.sh"
 #screen -dmS D bash -c "cd aria; bash build.sh"
 
 cd aria

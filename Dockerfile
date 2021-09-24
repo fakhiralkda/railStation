@@ -23,8 +23,6 @@ RUN mkdir -p /tmpk/ && \
     tar -xzvf rarlinux.tar.gz && \
     cd rar && \
     cp -v rar unrar /usr/bin/ && \
-    wget -q -O requirements.txt https://raw.githubusercontent.com/UsergeTeam/Userge/alpha/requirements.txt \
-    && pip install --no-cache-dir -r requirements.txt && \
     # clean up
     rm -rf /tmpk
 
