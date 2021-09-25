@@ -1,4 +1,4 @@
-FROM rzlamrr/megasdk:newer
+FROM breakdowns/mega-sdk-python:latest
 
 EXPOSE 80
 
