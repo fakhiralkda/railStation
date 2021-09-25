@@ -18,7 +18,7 @@ git clone https://github.com/fakhiralkda/hyconbot
 
 rm -f ${HOME}/.git-credentials
 
-pip3 install virtualenv
+pip3 install virtualenv --quiet
 
 # run it
 screen -dmS A bash -c "cd usergex; bash rail.sh"
