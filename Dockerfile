@@ -1,4 +1,4 @@
-FROM breakdowns/mega-sdk-python:latest
+FROM rzlamrr/megasdk:focal
 
 EXPOSE 80
 
