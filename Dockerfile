@@ -1,4 +1,4 @@
-FROM rzlamrr/megasdk:focal
+FROM rzlamrr/megasdk:bullseye
 
 EXPOSE 80
 
